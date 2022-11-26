@@ -1,14 +1,11 @@
-﻿//Random rnd = new Random();
+﻿
 using System.Globalization;
 
 namespace Lesson_5
 {
-    internal class Rnd
-    {
-        public static Random rnd = new Random();
-    }
     internal class Program
     {
+        Random rnd = new Random();
         static void Main(string[] args)
         {
             List<Employee> entitys = new List<Employee>();
@@ -18,9 +15,9 @@ namespace Lesson_5
                 int[] emplSalarys = new int[] { };
                 for (int i = 0; i < 11; i++)
                 {
-                    emplSalarys.ToList().Add(Rnd.rnd.Next(10000, 12000));
+                    emplSalarys.ToList().Add(rnd.Next(10000, 12000));
                 }
-                Employee entity_ = new Employee($"empl{j}", emplSalarys);
+                Employee entity_ = new Employee($"empl{j}", emplSalarys.ToArray());
                 entitys.Add(entity_);
             }
             foreach (Employee entity in entitys)
