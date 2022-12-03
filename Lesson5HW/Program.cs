@@ -62,7 +62,7 @@ namespace Lesson5HW
         {
             Health = Health - DamageDealer.Atack;
         }
-        public virtual Character(int health, int atack)
+        public Character(int health, int atack)
         { 
             Health = health;
             Atack = atack;
@@ -75,10 +75,7 @@ namespace Lesson5HW
         {
             Aim.TakeDamage(this);
         }
-        public override void Warrior(int health,int atack)
-        { 
-            base.Ch
-        }
+        public Warrior(int health,int atack) : base(health,atack)
     }
     public class Archer : Character
     {
@@ -102,10 +99,8 @@ namespace Lesson5HW
             Aim.TakeDamage(this);
         }
 
-        public Archer(int health, int atack, int dodgeChanse)
+        public Archer(int health, int atack, int dodgeChanse) : base(health,atack)
         {
-            Health = health;
-            Atack = atack;
             _dodgeChanse = dodgeChanse;
         }
     }
@@ -124,10 +119,8 @@ namespace Lesson5HW
         {
             Aim.TakeDamage(this);
         }
-        public Shielder(int health,int atack, int armor)
-        {
-            Health = health;
-            Atack = atack;
+        public Shielder(int health,int atack, int armor) : base(health,atack)
+        { 
             _armor = armor;
         }
        
